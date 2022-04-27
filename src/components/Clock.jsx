@@ -1,24 +1,23 @@
 import { Component } from "react";
 
-class Clock extends Component{
-  constructor(props){
-    super(props);
-    setInterval(() => this.tick(),1000);
-  }
+class Clock extends Component {
   state = {
-    time: new Date()
+    clickCount: 0
   }
-  render(){
-    return(
+  render() { 
+    return ( 
       <div>
-        <h2>{this.state.time.toLocaleTimeString()}</h2>
+        <h1>you are clicked {this.state.clickCount} time</h1>
+        <button onClick={this.handleClick}>asdasd</button>
       </div>
-      )
+     );
   }
-  tick() {
-    this.setState({
-      time: new Date()
-    });
+  handleClick = () => {
+    this.setState((state) => {
+      return {
+        clickCount: state.clickCount + 1
+      }
+    })
   }
 }
 export default Clock;
