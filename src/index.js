@@ -1,8 +1,14 @@
-import React from "react";
-import { createRoot } from 'react-dom/client';
-import Chat from "./Chat-App";
-import "./components/Style.css"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './components/Style.css';
+import App from './App';
+// import reportWebVitals from './reportWebVitals';
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-const root = createRoot(document.getElementById("root"));
-root.render(<React.StrictMode><Chat /></React.StrictMode>);
+// reportWebVitals();
