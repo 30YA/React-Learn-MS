@@ -5,6 +5,82 @@
     url("../fonts/Sahel.woff2") format("woff2");
   font-weight: bolder;
 }
+body {
+  background-color: #28223F;
+  font-family: sahel, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  min-height: 100vh;
+  margin: 0;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
+h6 {
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.card-container {
+  background-color: #231E39;
+  border-radius: 5px;
+  box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
+  color: #B3B8CD;
+  padding-top: 30px;
+  position: relative;
+  width: 350px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.card-container .info {
+  color: #231E39;
+  background-color: #FEBB0B;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 3px 7px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.card-container .round {
+  width: 70px;
+  height: 70px;
+  border: 1px solid #03BFCB;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+
+.footer {
+  background-color: #1F1A36;
+  text-align: left;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+/* ========================== */
 *,
 body {
   font-family: sahel, sans-serif;
@@ -13,9 +89,7 @@ body {
   box-sizing: border-box;
 }
 body {
-  position: relative;
-  /* img/backimg.jpg */
-  background-image: url("../img/backimg.jpg");
+  /* background-image: url("../img/backimg.jpg"); */
 }
 h1,
 h2,
@@ -41,122 +115,4 @@ body {
 button {
   background-color: transparent;
   border: none;
-}
-.top-header {
-  background-color: #609fff;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border-radius: 0 0 25px 25px;
-}
-.logo {
-  color: white;
-  font-size: 22px;
-  font-weight: 500;
-  padding: 20px 30px;
-  /* font-family: 'Mochiy Pop P One', sans-serif; */
-}
-/* --------- Main ----------- */
-.bd {
-  position: relative;
-  margin: 50px auto;
-  width: 800px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 0 25px;
-}
-.AddTask {
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(243, 243, 243);
-  border-radius: 25px;
-  /* box-shadow: 0 0 15px 0 rgba(85, 123, 221, 0.15); */
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-}
-form {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  height: 60px;
-}
-.inputText {
-  width: 75%;
-  border: none;
-  border-radius: 20px;
-  padding: 10px;
-  font-size: 20px;
-}
-.inputText:focus {
-  outline: 0.2rem solid #609fff;
-}
-.submit {
-  height: 100%;
-  width: 20%;
-  border-radius: 20px;
-  border: none;
-  color: white;
-  background-color: rgb(64, 181, 105);
-  font-size: 20px;
-  cursor: pointer;
-}
-.submit:hover {
-  background-color: rgb(44, 126, 73);
-}
-.Tasks {
-  margin-top: 15px;
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-color: rgb(243, 243, 243);
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-}
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  box-shadow: 0 0 0 1px #dddddd;
-  width: 100%;
-  padding: 15px;
-  border-radius: 20px;
-  overflow: hidden;
-  border-style: hidden; /* hide standard table (collapsed) border */
-}
-
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 8px;
-  padding: 15px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-.xmark{
-    background-color: rgb(218, 74, 74);
-    color: white;
-    cursor: pointer;
-}
-@media screen and (max-width: 500px) {
-  .main {
-    padding: 44px 30px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .bd {
-    width: 100%;
-  }
-  .header {
-    width: 100%;
-  }
 }
