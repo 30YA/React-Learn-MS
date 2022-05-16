@@ -1,11 +1,11 @@
 import { Component } from "react";
-import IPinfo from "./components/IPinfo";
+import BlogPost from "./components/BlogPost";
 export default class App extends Component {
   state = {};
   render() {
     return (
       <>
-        <IPinfo />
+        <BlogPost />
       </>
     );
   }
