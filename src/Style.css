@@ -1,23 +1,11 @@
-body {
-  padding: 15px;
-  background-color: #007bec;
-}
-
-input {
-  margin-left: 25px;
-}
-
 div {
-  margin-top: 20px;
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  margin: 20px;
+  border: 2px solid #000000;
 }
 
-.section {
-  padding: 10px;
-  background-color: #dadada;
-  border-radius: 10px;
-
-  max-width: 300px;
-}
-label{
-  margin: 0 10px;
+button {
+  cursor: pointer;
 }
