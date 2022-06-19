@@ -1,6 +1,7 @@
 import CardImage from "./CardImage";
 import CartItem from "./CartItem";
 import States from "./States";
+import Buy from "./Buy";
 function Card({hero}) {
   return (
     <div className="clash-card barbarian">
@@ -9,6 +10,8 @@ function Card({hero}) {
       <CartItem type="clash-card__level clash-card__level--barbarian">{hero.level}</CartItem>
       <CartItem type="clash-card__unit-name">The {hero.name}</CartItem>
       <CartItem type="clash-card__unit-description">{hero.description}</CartItem>
+
+      <Buy name={hero.name} />
 
       <States units={hero.units} />
     </div>
