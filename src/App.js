@@ -1,8 +1,8 @@
-import SingUp from "./components/SignUp";
+import Slider from "./components/Slider";
 import "./style.css";
 function App() {
   return (
-    <SingUp />
+    <Slider />
   );
 }
 
