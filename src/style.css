@@ -11,7 +11,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font: 14px/20px "Lato", Arial, sans-serif;
-  color: #9e9e9e;
+  color: #ffffff;
   padding-top: 30px;
   height: 100vh;
 }
@@ -315,9 +315,9 @@ p {
 
 button {
   padding: 2px 5px;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
-  color: #fff;
-  width: 35px;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
+  border: 1px solid gray;
 }

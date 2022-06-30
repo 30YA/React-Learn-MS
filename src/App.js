@@ -1,8 +1,12 @@
-import Slider from "./components/Slider";
+// import Slider from "./components/Slider";
+import UseRef from "./useRef/UseRef";
 import "./style.css";
 function App() {
   return (
-    <Slider />
+    <>
+      {/* <Slider /> */}
+      <UseRef />
+    </>
   );
 }
 
