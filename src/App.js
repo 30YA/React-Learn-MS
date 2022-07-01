@@ -13,21 +13,41 @@ function App() {
   const [postId, setPostId] = useState("1");
   const [loading, setLoading] = useState(true);
 
+  const userAction = (type, payLoad) => {
+    switch (type) {
+      case "GetPostSuccess":
+        setLoading(false);
+        setTitle(payLoad.title);
+        setToast({
+          type: "success",
+          message: `پست با شناسه${postId} بارگزاری شد`,
+        });
+        break;
+      // -----------------------------------------------
+      case "PostRequest":
+        setLoading(true);
+        setPostId(payLoad);
+        break;
+
+      default:
+        break;
+    }
+  };
+  // https://jsonplaceholder.ir/posts/
+  // https://jsonplaceholder.typicode.com/posts/
   useEffect(() => {
     fetch(`https://jsonplaceholder.ir/posts/${postId}`)
       .then((respons) => respons.json())
-      .then((post) => setTitle(post.title));
-      setLoading(false);
-      setToast({type: 'success',message: `پست با شناسه${postId} بارگزاری شد`})
-  },[postId]);
+      .then((post) => {
+        userAction('GetPostSuccess',post)
+      });
+  }, [postId]);
 
   const inputHandler = (e) => {
-    setLoading(true);
-    setPostId(e.target.value)
-  }
+    userAction('PostRequest',e.target.value)
+  };
   return (
     <div className="main">
-      
       <label htmlFor="numinput">Post id : </label>
       <input type="Number" value={postId} onChange={inputHandler} />
       {loading ? <Loading /> : <h1>{title}</h1>}

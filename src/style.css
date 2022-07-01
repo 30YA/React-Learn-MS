@@ -12,10 +12,14 @@
   box-sizing: border-box;
   font-family: Sahel,"Lato",  Arial, sans-serif;
 }
+h1{
+  line-height: 40px;
+}
 body {
   /* background-image: linear-gradient(to bottom right, rgb(136, 0, 255), rgb(248, 196, 50)); */
   /* background-repeat: no-repeat;
   background-size: cover; */
+  background-color: rgb(222, 221, 221);
   font: 14px/20px "Lato", Sahel, Arial, sans-serif;
   margin: 0;
 }
