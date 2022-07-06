@@ -1,51 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useReducer } from "react";
 import Loading from "./components/Loading";
 import Toast from "./components/Toast";
 import "./style.css";
 import "react-toastify/dist/ReactToastify.css";
 
-function App() {
-  const [toast, setToast] = useState({
-    type: "success",
-    message: "",
-  });
-  const [title, setTitle] = useState("");
-  const [postId, setPostId] = useState("1");
-  const [loading, setLoading] = useState(true);
-
-  const userAction = (type, payLoad) => {
-    switch (type) {
-      case "GetPostSuccess":
-        setLoading(false);
-        setTitle(payLoad.title);
-        setToast({
+const initialState = {
+  toast: { type: "success", message: "" },
+  title: "",
+  postId: "1",
+  loading: true,
+};
+const reduser = (state, action) => {
+  switch (action.type) {
+    case "GetPostSuccess":
+      return {
+        ...state,
+        toast: {
           type: "success",
-          message: `پست با شناسه${postId} بارگزاری شد`,
-        });
-        break;
-      // -----------------------------------------------
-      case "PostRequest":
-        setLoading(true);
-        setPostId(payLoad);
-        break;
+          message: `پست با شناسه${action.payLoad.id} بارگزاری شد`,
+        },
+        title: action.payLoad.title,
+        loading: false,
+      };
+    case "PostRequest":
+      return {
+        ...state,
+        postId: action.payLoad,
+        loading: true,
+      };
+    default:
+      break;
+  }
+};
 
-      default:
-        break;
-    }
-  };
-  // https://jsonplaceholder.ir/posts/
-  // https://jsonplaceholder.typicode.com/posts/
+function App() {
+  const [{toast,title,postId,loading}, dispatch] = useReducer(reduser, initialState);
+
   useEffect(() => {
     fetch(`https://jsonplaceholder.ir/posts/${postId}`)
       .then((respons) => respons.json())
-      .then((post) => {
-        userAction('GetPostSuccess',post)
-      });
+      .then((post) => dispatch({ type: "GetPostSuccess", payLoad: post }));
   }, [postId]);
 
   const inputHandler = (e) => {
-    userAction('PostRequest',e.target.value)
+    dispatch({ type: "PostRequest", payLoad: e.target.value });
   };
+
   return (
     <div className="main">
       <label htmlFor="numinput">Post id : </label>
