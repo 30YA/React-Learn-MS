@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
+import Random from "./Random";
 
 function UseMemo() {
   const [counter1, setCounter1] = useState(0);
@@ -15,6 +16,9 @@ function UseMemo() {
   //   const randomNumber = Math.random() * counter1;
   const count = useMemo(() => WordCount('java'),[])
 
+  const handle = useMemo(() => function handle(){console.log('siavash')},[]);
+  const handle2 = useCallback(function handle(){console.log('siavash')},[]);
+
   return (
     <div>
       <p>Word Count: {count}</p>
@@ -29,6 +33,7 @@ function UseMemo() {
         <button onClick={() => setCounter2((c) => c + 1)}>Increament2</button>
         <button onClick={() => setCounter2((c) => c - 1)}>Decrease2</button>
       </div>
+      <Random handle={handle} handle2={handle2}/>
     </div>
   );
 }
