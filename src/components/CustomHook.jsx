@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useDebugValue } from "react";
 
 function CustomHook(init) {
   const [filds, setFilds] = useState(init);
@@ -11,7 +11,10 @@ function CustomHook(init) {
     });
   };
 
-  return {filds,handle}
+  //useDebugValue(`${Object.keys(filds).length} filds`)
+  useDebugValue(filds, filds => `${Object.keys(filds).length} filds`)
+  
+  return { filds, handle };
 }
 
 export default CustomHook;
