@@ -1,10 +1,10 @@
-import React, { useEffect, useReducer } from "react";
-import UseMemo from "./components/UseMemo";
+import React from "react";
+import Form from "./components/Form";
 import "./style.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  return <UseMemo />;
+  return <Form />;
 }
 
 export default App;
